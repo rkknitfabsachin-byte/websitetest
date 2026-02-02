@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us | RK Knit Fab</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- PAGE-ONLY STYLES -->
+  <style>
+    .about-intro {
+      max-width: 900px;
+      margin: 0 auto 70px;
+      text-align: center;
+      opacity: .85;
+    }
+
+    /* STORY + IMAGE */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 90px;
+    }
+
+    /* FOUNDER */
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 100px;
+    }
+
+    .founder-img {
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, .15);
+    }
+
+    .quote {
+      font-size: 18px;
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+
+    .founder-name {
+      font-weight: 700;
+      margin-top: 12px;
+    }
+
+    /* CERTIFICATES */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-bottom: 100px;
+    }
+
+    .cert-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .08);
+      text-align: center;
+    }
+
+    .cert-card img {
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+
+    /* TEAM */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 36px;
+      margin-bottom: 80px;
+    }
+
+    .team-card {
+      background: #fff;
+      border-radius: 22px;
+      padding: 22px;
+      text-align: center;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .08);
+    }
+
+    .team-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 14px;
+    }
+
+    .team-card h4 {
+      margin-bottom: 4px;
+    }
+
+    .team-card p {
+      font-size: 14px;
+      opacity: .75;
+    }
+
+    @media(max-width:900px) {
+
+      .about-grid,
+      .founder-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="images/RKKNITFABLOGO.png" alt="RK Knit Fab">
+      <h1>RK Knit Fab</h1></a>
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="gsm-calculator.html">Calculators</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- INTRO -->
+  <section>
+    <h3>About RK Knit Fab</h3>
+    <div class="about-intro">
+      RK Knit Fab is a fabric manufacturing company built on the principles of
+      consistency, transparency, and long-term partnerships. We work closely with
+      garment manufacturers and buyers who value quality, reliability, and clear
+      communication.
+    </div>
+
+    <!-- COMPANY STORY -->
+    <div class="about-grid">
+
+      <div>
+        <p style="margin-bottom:16px;">
+          Our journey began with a simple but strong focus — to manufacture knitted
+          fabrics that perform consistently in real garment production. From yarn
+          selection to knitting, finishing, and inspection, every step is managed
+          with attention to detail.
+        </p>
+
+        <p style="margin-bottom:16px;">
+          Over the years, RK Knit Fab has grown by maintaining disciplined processes
+          and by listening closely to our customers’ requirements. We understand that
+          fabric is the foundation of any garment, and reliability at this stage is
+          critical.
+        </p>
+
+        <p>
+          Today, we supply a range of knitted fabrics including cotton, poly-cotton,
+          rib, and blended fabrics, supporting bulk orders with consistent quality
+          and dependable timelines.
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="images/outside view.jpg" alt="Factory Image">
+        <p style="margin-top:12px; font-size:14px; opacity:.7;">
+          RK Knit Fab
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section>
+    <h3>Founder’s Message</h3>
+
+    <div class="founder-grid">
+
+      <div class="founder-img">
+        <img src="images/founder.jpg" alt="Founder Image">
+      </div>
+
+      <div>
+        <div class="quote">
+          “Our goal has always been simple — to supply fabrics that our customers can
+          trust, reorder, and build their own businesses on.”
+        </div>
+
+        <p style="margin-bottom:14px;">
+          From the beginning, we focused on building strong manufacturing fundamentals
+          rather than chasing short-term volume. This approach helped us earn long-term
+          relationships with buyers who value consistency and accountability.
+        </p>
+
+        <p>
+          As RK Knit Fab continues to grow, our commitment remains the same: quality
+          fabrics, transparent communication, and dependable service.
+        </p>
+
+        <div class="founder-name">
+          — Founder, RK Knit Fab
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section>
+    <h3>Certifications & Compliance</h3>
+
+    <div class="cert-grid">
+
+      <div class="cert-card">
+        <img src="images/certificate.png">
+        <h4>ISO Certification</h4>
+      </div>
+
+      <div class="cert-card">
+        <img src="images/certificate.png">
+        <h4>Quality Compliance</h4>
+      </div>
+
+      <div class="cert-card">
+        <img src="images/certificate.png">
+        <h4>Industry Standards</h4>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section>
+    <h3>Our Team</h3>
+
+    <div class="team-grid">
+
+      <div class="team-card">
+        <img src="images/team1.jpg">
+        <h4>Production Manager</h4>
+        <p>Knitting & Finishing</p>
+      </div>
+
+      <div class="team-card">
+        <img src="images/team2.jpg">
+        <h4>Quality Head</h4>
+        <p>Inspection & Control</p>
+      </div>
+
+      <div class="team-card">
+        <img src="images/team2.jpg">
+        <h4>Sales & Support</h4>
+        <p>Client Coordination</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 RK Knit Fab. All Rights Reserved.
+
+    <div class="social-links">
+      <a href="#">
+        <div class="social-logo"></div>
+        <span>Instagram</span>
+      </a>
+      <a href="#">
+        <div class="social-logo"></div>
+        <span>Facebook</span>
+      </a>
+      <a href="#">
+        <div class="social-logo"></div>
+        <span>LinkedIn</span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/917837873646" class="whatsapp">WhatsApp</a>
+  <!-- ADD YOUR WHATSAPP LINK ABOVE -->
+
+  <script src="script.js"></script>
+</body>
+
+</html>

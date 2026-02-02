@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RK Knit Fab | Fabric Manufacturers</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- PAGE-ONLY SLIDER STYLES -->
+  <style>
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .mini-slider {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #e5e7eb;
+    }
+
+    .mini-slides {
+      display: flex;
+      transition: .4s ease;
+    }
+
+    .mini-slides img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .mini-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fff;
+      border: none;
+      padding: 8px 12px;
+      font-size: 18px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .15);
+    }
+
+    .mini-prev {
+      left: 12px;
+    }
+
+    .mini-next {
+      right: 12px;
+    }
+
+    @media(max-width:900px) {
+      .story-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="images/RKKNITFABLOGO.png" alt="RK Knit Fab">
+      <h1>RK Knit Fab</h1></a>
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="gsm-calculator.html">Calculators</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="fabric-blobs">
+      <div class="fabric-blob"></div>
+      <div class="fabric-blob"></div>
+      <div class="fabric-blob"></div>
+    </div>
+    <div class="hero-content">
+      <h2>From Yarn to Fabric, Built with Precision</h2>
+      <p>
+        RK Knit Fab is a fabric manufacturing company focused on consistent quality,
+        reliable production, and long-term partnerships with garment manufacturers.
+      </p>
+    </div>
+  </div>
+
+  <!-- STORY SECTION -->
+  <section>
+    <h3>Our Story</h3>
+
+    <div class="story-grid">
+
+      <!-- TEXT -->
+      <div>
+        <p style="margin-bottom:18px;">
+          Established in the year of 1997. We “R K Knit Fab” are a leading Manufacturer of a wide range of Knitted
+          Fabric, T Shirt
+          Fabric, Micro Polyester Fabric and Fleece Fabric etc.
+
+          We direct all our activities to cater the expectations of customers by providing them excellent quality
+          products as per
+          their gratification. Moreover, we follow moral business policies and crystal pure transparency in all our
+          transactions
+          to keep healthy relations with the customers.
+
+          For our accomplishment story, we are grateful to Our CEO Kartik Bhalla, whose continual backing and direction
+          have been
+          useful to us for attaining exponential development in the current market.
+        </p>
+
+        <p style="margin-bottom:18px;">
+          What began as a focused setup has grown into a dependable supply partner for
+          buyers looking for cotton, poly-cotton, and rib fabrics in bulk quantities.
+        </p>
+
+        <p>
+          Today, RK Knit Fab continues to work closely with clients, delivering fabrics
+          that perform reliably in real production environments.
+        </p>
+      </div>
+
+      <!-- IMAGE SLIDER -->
+      <div class="mini-slider" data-slider>
+        <div class="mini-slides">
+          <img src="images/outside view.jpg" alt="rk knit fab outside image">
+          <img src="images/disptach.jpg" alt="dispatch area">
+          <img src="images/movement.jpg" alt="movement of rolls">
+        </div>
+        <button class="mini-btn mini-prev">‹</button>
+        <button class="mini-btn mini-next">›</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INFRASTRUCTURE -->
+  <section>
+    <h3>Inside RK Knit Fab</h3>
+
+    <div class="grid">
+
+      <!-- PRODUCTION -->
+      <div class="card">
+        <div class="mini-slider" data-slider>
+          <div class="mini-slides">
+            <img src="images/MACHINE 1.jpg">
+            <img src="images/MACHINE 2.jpg">
+          </div>
+          <button class="mini-btn mini-prev">‹</button>
+          <button class="mini-btn mini-next">›</button>
+        </div>
+        <h4 style="margin-top:14px;">Knitting & Production</h4>
+        <p style="opacity:.75;font-size:14px;">
+          Controlled knitting processes ensuring consistent GSM and fabric structure.
+        </p>
+      </div>
+
+      <!-- QUALITY -->
+      <div class="card">
+        <div class="mini-slider" data-slider>
+          <div class="mini-slides">
+            <img src="images/QC1.jpg">
+            <img src="images/QC2.jpg">
+          </div>
+          <button class="mini-btn mini-prev">‹</button>
+          <button class="mini-btn mini-next">›</button>
+        </div>
+        <h4 style="margin-top:14px;">Quality Inspection</h4>
+        <p style="opacity:.75;font-size:14px;">
+          Fabric inspection at multiple stages before dispatch.
+        </p>
+      </div>
+
+      <!-- FINISHED -->
+      <div class="card">
+        <div class="mini-slider" data-slider>
+          <div class="mini-slides">
+            <img src="images/FP1.jpg">
+            <img src="images/FP2.jpg">
+          </div>
+          <button class="mini-btn mini-prev">‹</button>
+          <button class="mini-btn mini-next">›</button>
+        </div>
+        <h4 style="margin-top:14px;">Finished Fabric</h4>
+        <p style="opacity:.75;font-size:14px;">
+          Packed and ready fabrics for garment manufacturing units.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section>
+    <h3>Why Buyers Choose RK Knit Fab</h3>
+    <div class="grid">
+      <div class="card">In-house Fabric Manufacturing</div>
+      <div class="card">Consistent Quality Across Lots</div>
+      <div class="card">Bulk Order Handling</div>
+      <div class="card">Clear Communication & Timelines</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 RK Knit Fab. All Rights Reserved.
+
+    <div class="social-links">
+      <a href="#">
+        <div class="social-logo"></div>
+        <span>Instagram</span>
+      </a>
+      <a href="#">
+        <div class="social-logo"></div>
+        <span>Facebook</span>
+      </a>
+      <a href="#">
+        <div class="social-logo"></div>
+        <span>LinkedIn</span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/917837873646" class="whatsapp">WhatsApp</a>
+  <!-- ADD YOUR WHATSAPP LINK ABOVE -->
+
+  <!-- SLIDER SCRIPT -->
+  <script>
+    document.querySelectorAll('[data-slider]').forEach(slider => {
+      const track = slider.querySelector('.mini-slides');
+      const imgs = track.children;
+      let i = 0;
+
+      slider.querySelector('.mini-next').onclick = () => {
+        i = (i + 1) % imgs.length;
+        track.style.transform = `translateX(-${i * 100}%)`;
+      };
+      slider.querySelector('.mini-prev').onclick = () => {
+        i = (i - 1 + imgs.length) % imgs.length;
+        track.style.transform = `translateX(-${i * 100}%)`;
+      };
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

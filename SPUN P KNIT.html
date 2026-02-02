@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPUN P KNIT | RK Knit Fab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="images/RKKNITFABLOGO.png" alt="RK Knit Fab">
+      <h1>RK Knit Fab</h1></a>
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="gsm-calculator.html">Calculators</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <div class="product-grid">
+
+      <div class="slider">
+        <div class="slides" id="slides">
+<img src="images/QC1.jpg" alt="SPUN P KNIT">
+</div>
+        <button class="slide-btn prev" onclick="move(-1)">‹</button>
+        <button class="slide-btn next" onclick="move(1)">›</button>
+      </div>
+
+      <div>
+        <h2>SPUN P KNIT</h2>
+        <div class="subtitle">Uniform Fabrics · Factory Manufactured</div>
+
+        <table class="spec-table">
+          <tr>
+            <td>GSM</td>
+            <td>160 / 180 / 200</td>
+          </tr>
+          <tr>
+            <td>Width</td>
+            <td>42” – 46”</td>
+          </tr>
+          <tr>
+            <td>Composition</td>
+            <td>100% Cotton</td>
+          </tr>
+          <tr>
+            <td>Finish</td>
+            <td>Bio Wash / Compact</td>
+          </tr>
+          <tr>
+            <td>MOQ</td>
+            <td>100 Kg</td>
+          </tr>
+        </table>
+
+        <a href="contact.html" class="enquire-btn">Enquire for Price</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="contact-block">
+    <h3>Need pricing or samples?</h3>
+    <p>Contact us for rates, shade cards, and bulk order discussions.</p>
+    <a href="contact.html">Contact Us</a>
+  </section>
+
+  <section>
+    <h3>More Fabrics</h3>
+    <div class="grid">
+      <a href="SAP MATTY.html" class="card">SAP MATTY</a>
+      <a href="AIRJET FLEECE.html" class="card">AIRJET FLEECE</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 RK Knit Fab. All Rights Reserved.
+
+    <div class="social-links">
+      <a href="#">
+        <div class="social-logo"></div>
+        <span>Instagram</span>
+      </a>
+      <a href="#">
+        <div class="social-logo"></div>
+        <span>Facebook</span>
+      </a>
+      <a href="#">
+        <div class="social-logo"></div>
+        <span>LinkedIn</span>
+      </a>
+    </div>
+  </footer>
+  <a href="https://wa.me/917837873646" class="whatsapp">WhatsApp</a>
+
+  <script>
+    let i = 0;
+    function move(d) {
+      const s = document.getElementById("slides");
+      const t = s.children.length;
+      i = (i + d + t) % t;
+      s.style.transform = `translateX(-${i * 100}%)`;
+    }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

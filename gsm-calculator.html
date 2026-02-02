@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GSM & Fabric Calculator | RK Knit Fab</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Calculator Specific Styles */
+        :root {
+            --accent: #111827;
+            --active-tab: #2563eb;
+        }
+
+        .calc-wrap {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .calc-nav {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            background: #fff;
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .calc-nav a {
+            flex: 1;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            color: #6b7280;
+            font-weight: 600;
+            transition: .2s;
+            min-width: 100px;
+        }
+
+        .calc-nav a.active {
+            background: #eff6ff;
+            color: var(--active-tab);
+        }
+
+        .calc-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.4s ease;
+        }
+
+        .calc-title {
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 24px;
+            color: #1f2937;
+        }
+
+        .calc-group {
+            margin-bottom: 16px;
+        }
+
+        .calc-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: #4b5563;
+            margin-bottom: 6px;
+        }
+
+        .calc-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 16px;
+        }
+
+        .calc-group input:focus {
+            outline: 2px solid var(--active-tab);
+            border-color: transparent;
+        }
+
+        .calc-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .calc-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .2s;
+            font-size: 15px;
+        }
+
+        .btn-primary {
+            background: #111827;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #374151;
+        }
+
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border: 1px solid #d1d5db;
+            color: #4b5563;
+        }
+
+        .btn-ghost:hover {
+            background: #f9fafb;
+        }
+
+        .calc-result {
+            margin-top: 24px;
+            padding: 16px;
+            background: #ecfdf5;
+            border: 1px solid #d1fae5;
+            border-radius: 8px;
+            text-align: center;
+            color: #065f46;
+            font-weight: 700;
+            font-size: 18px;
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="index.html" class="nav-logo">
+            <img src="images/RKKNITFABLOGO.png" alt="RK Knit Fab">
+            <h1>RK Knit Fab</h1>
+        </a>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gsm-calculator.html" style="color:#2563eb">Calculators</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <h2>Fabric Calculators</h2>
+        <p>Calculate GSM, Length, and Weight precisely for your production needs.</p>
+    </div>
+
+    <section>
+        <div class="calc-wrap">
+
+            <!-- TABS -->
+            <div class="calc-nav">
+                <a href="#" id="link-length" onclick="showView('length');return false;" class="active">Length</a>
+                <a href="#" id="link-gsm" onclick="showView('gsm');return false;">GSM</a>
+                <a href="#" id="link-weight" onclick="showView('weight');return false;">Weight</a>
+            </div>
+
+            <!-- LENGTH CARD -->
+            <div id="view-length" class="calc-card">
+                <div class="calc-title">Find Fabric Length (Meters)</div>
+                <div class="calc-group"><label>Fabric Weight (kg)</label><input id="length-weight" type="number"
+                        placeholder="e.g. 20"></div>
+                <div class="calc-group"><label>GSM</label><input id="length-gsm" type="number" placeholder="e.g. 180">
+                </div>
+                <div class="calc-group"><label>DIA (inches)</label><input id="length-dia" type="number"
+                        placeholder="e.g. 30"></div>
+
+                <div class="calc-actions">
+                    <button class="calc-btn btn-primary" onclick="calcLength()">Calculate Length</button>
+                    <button class="calc-btn btn-ghost" onclick="resetPage()">Reset</button>
+                </div>
+                <div id="length-result" class="calc-result"></div>
+                <div style="margin-top:20px; text-align:center;">
+                    <button class="calc-btn btn-secondary" style="max-width:200px" onclick="exportPdf('length')">Export
+                        PDF Report</button>
+                </div>
+            </div>
+
+            <!-- GSM CARD -->
+            <div id="view-gsm" class="calc-card" style="display:none">
+                <div class="calc-title">Find GSM</div>
+                <div class="calc-group"><label>Fabric Weight (kg)</label><input id="gsm-weight" type="number"></div>
+                <div class="calc-group"><label>Length (m)</label><input id="gsm-length" type="number"></div>
+                <div class="calc-group"><label>DIA (inches)</label><input id="gsm-dia" type="number"></div>
+
+                <div class="calc-actions">
+                    <button class="calc-btn btn-primary" onclick="calcGsm()">Calculate GSM</button>
+                    <button class="calc-btn btn-ghost" onclick="resetPage()">Reset</button>
+                </div>
+                <div id="gsm-result" class="calc-result"></div>
+                <div style="margin-top:20px; text-align:center;">
+                    <button class="calc-btn btn-secondary" style="max-width:200px" onclick="exportPdf('gsm')">Export PDF
+                        Report</button>
+                </div>
+            </div>
+
+            <!-- WEIGHT CARD -->
+            <div id="view-weight" class="calc-card" style="display:none">
+                <div class="calc-title">Find Weight (Kg)</div>
+                <div class="calc-group"><label>Length (m)</label><input id="weight-length" type="number"></div>
+                <div class="calc-group"><label>GSM</label><input id="weight-gsm" type="number"></div>
+                <div class="calc-group"><label>DIA (inches)</label><input id="weight-dia" type="number"></div>
+
+                <div class="calc-actions">
+                    <button class="calc-btn btn-primary" onclick="calcWeight()">Calculate Weight</button>
+                    <button class="calc-btn btn-ghost" onclick="resetPage()">Reset</button>
+                </div>
+                <div id="weight-result" class="calc-result"></div>
+                <div style="margin-top:20px; text-align:center;">
+                    <button class="calc-btn btn-secondary" style="max-width:200px" onclick="exportPdf('weight')">Export
+                        PDF Report</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 RK Knit Fab. All Rights Reserved.
+        <div class="social-links">
+            <a href="#">
+                <div class="social-logo"></div><span>Instagram</span>
+            </a>
+            <a href="#">
+                <div class="social-logo"></div><span>Facebook</span>
+            </a>
+            <a href="#">
+                <div class="social-logo"></div><span>LinkedIn</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/917837873646" class="whatsapp">WhatsApp</a>
+
+    <script src="script.js"></script>
+    <script>
+        // Navigation
+        function showView(name) {
+            ['length', 'gsm', 'weight'].forEach(v => {
+                const el = document.getElementById("view-" + v);
+                if (el) el.style.display = (v === name) ? "block" : "none";
+
+                const link = document.getElementById("link-" + v);
+                if (link) link.classList.toggle("active", v === name);
+            });
+        }
+
+        function resetPage() { location.reload(); }
+
+        // Logic
+        function calcLength() {
+            const w = +document.getElementById("length-weight").value;
+            const gsm = +document.getElementById("length-gsm").value;
+            const dia = +document.getElementById("length-dia").value;
+            const out = document.getElementById("length-result");
+
+            if (!w || !gsm || !dia) { alert("Please fill all fields"); return; }
+
+            const length = (1000 * w) / (gsm * dia * 2 * 0.0254);
+            out.innerHTML = "Result Length: " + length.toFixed(2) + " m";
+            out.style.display = "block";
+            out.dataset.result = length.toFixed(2) + " m";
+            out.dataset.inputs = JSON.stringify({ Weight_kg: w, GSM: gsm, DIA_inch: dia });
+        }
+
+        function calcGsm() {
+            const w = +document.getElementById("gsm-weight").value;
+            const l = +document.getElementById("gsm-length").value;
+            const dia = +document.getElementById("gsm-dia").value;
+            const out = document.getElementById("gsm-result");
+
+            if (!w || !l || !dia) { alert("Please fill all fields"); return; }
+
+            const width = dia * 2 * 0.0254;
+            const gsm = (w * 1000) / (l * width);
+            out.innerHTML = "Result GSM: " + gsm.toFixed(2);
+            out.style.display = "block";
+            out.dataset.result = gsm.toFixed(2);
+            out.dataset.inputs = JSON.stringify({ Weight_kg: w, Length_m: l, DIA_inch: dia });
+        }
+
+        function calcWeight() {
+            const l = +document.getElementById("weight-length").value;
+            const gsm = +document.getElementById("weight-gsm").value;
+            const dia = +document.getElementById("weight-dia").value;
+            const out = document.getElementById("weight-result");
+
+            if (!l || !gsm || !dia) { alert("Please fill all fields"); return; }
+
+            const width = dia * 2 * 0.0254;
+            const weight = (l * width * gsm) / 1000;
+            out.innerHTML = "Result Weight: " + weight.toFixed(2) + " kg";
+            out.style.display = "block";
+            out.dataset.result = weight.toFixed(2) + " kg";
+            out.dataset.inputs = JSON.stringify({ Length_m: l, GSM: gsm, DIA_inch: dia });
+        }
+
+        async function exportPdf(which) {
+            let outEl = document.getElementById(which + "-result");
+            if (!outEl.dataset.result) { alert("Calculate first"); return; }
+
+            const btn = event.target;
+            const originalText = btn.innerText;
+            btn.innerText = "Generating PDF...";
+            btn.disabled = true;
+
+            const payload = {
+                title: which.toUpperCase() + " Calculation Report",
+                type: which,
+                inputs: JSON.parse(outEl.dataset.inputs),
+                result: outEl.dataset.result
+            };
+
+            const API_URL = "https://script.google.com/macros/s/AKfycbxladkXTzXx4gDGtxJZog1MQ7RrSUyjDDZGSjW-2Uk2LeciEwIwcVt2ZkCqBi4SsR3baQ/exec";
+
+            try {
+                const res = await fetch(API_URL + "?action=pdf&data=" + encodeURIComponent(JSON.stringify(payload)));
+                const json = await res.json();
+
+                btn.innerText = originalText;
+                btn.disabled = false;
+
+                if (json.url) window.open(json.url, "_blank");
+                else alert("Error generating PDF");
+
+            } catch (e) {
+                console.error(e);
+                alert("Failed to export.");
+                btn.innerText = originalText;
+                btn.disabled = false;
+            }
+        }
+
+        // Init
+        showView('length');
+    </script>
+</body>
+
+</html>
